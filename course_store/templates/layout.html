@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>{% block title %}Raol{% endblock title %}</title>
+</head>
+<body>
+    <div class="body">
+        <nav>
+            <div class="left">
+                <a href="#"><div class='logo'></div></a>
+                <h1 class='name'><a href="#">Name</a></h1>
+            </div>
+            <div class="right">
+                <a href="https://www.youtube.com" target="blank" ><img src="{% static "img/YouTube.svg" %}" id='youtube'></a>
+                <a href="https://www.instagram.com" target="blank"><img src="{% static "img/Instagram.svg" %}" id='instagram'></a>
+                {% if user.is_authenticated %}
+                    <form action="shop:logout" method="post">
+                        <button>Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url "shop:login" %}">Login</a>
+                    <a href="{% url "shop:register" %}" class='nav'>Register</a>
+                {% endif %}
+                <a href="#courses" class="nav">Courses</a>
+                <a href="#about" class="nav">About</a>
+            </div>
+        </nav>
+    
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+    <script src="{% static "js/script.js" %}"></script>
+</body>
+</html>
