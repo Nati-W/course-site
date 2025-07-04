@@ -1,9 +1,16 @@
 {% extends "layout.html" %}
 
+
 {% block content %}
 <form action="login" method="post">
-    {{ form }}
-    <button type="submit">submit</button>
+    {% csrf_token %}
+    {{ form.username.label_tag }}  <!-- Manual field rendering -->
+    {{ form.username }}  <!-- Input field -->
+    <br>
+    {{ form.password.label_tag }}
+    {{ form.password }}
+    <br>
+    <button type="submit">Login</button>
 </form>
 
 {% endblock content %}

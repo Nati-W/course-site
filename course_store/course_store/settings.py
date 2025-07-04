@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+from urllib.parse import urlparse, parse_qsl
 from pathlib import Path
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -76,10 +79,18 @@ WSGI_APPLICATION = 'course_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+db_url = os.getenv("DATABASE_URL")
+tmpPostgres = urlparse(db_url) if db_url else None
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': tmpPostgres.path[1:] if tmpPostgres else '',
+        'USER': tmpPostgres.username if tmpPostgres else '',
+        'PASSWORD': tmpPostgres.password if tmpPostgres else '',
+        'HOST': tmpPostgres.hostname if tmpPostgres else '',
+        'PORT': tmpPostgres.port if tmpPostgres else '',
+        'OPTIONS': dict(parse_qsl(tmpPostgres.query)) if tmpPostgres and tmpPostgres.query else {}
     }
 }
 
