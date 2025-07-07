@@ -32,26 +32,28 @@ a{
     padding: 15px 15px 0 15px;
 }
 
-nav{
-    padding: 15px;
-}
-
 a.nav:hover{
     background-color: var(--hover-clr);
 }
 
 nav{
+    padding: 15px;
     border-color: rgb(255, 255, 255);
     height: 100px;
     justify-content: space-between;
     padding: 0 20px;
     position: sticky;
+    margin-bottom: 5em;
 }    
 
 .left, .right, .landing, .logo, .name, nav, .section{
     display: flex;
     align-items: center;
 }    
+
+.name{
+    margin: 0;
+}
 
 #youtube, #instagram{
     height: 1.75em;
@@ -84,6 +86,11 @@ nav{
     left: 0;
 }    
 
+.section_name{
+    display: flex;
+    justify-content: center;
+}
+
 a.course{
     padding: 5%;
     background-color: gray;
@@ -108,26 +115,6 @@ a.course:hover{
     height: 25vh;
 }
 
-.card{
-    padding: 5%;
-    background-color: gray;
-    height: 4em;
-    width: 8em;
-    margin: 0px 4em;
-    text-align: center;
-    position: relative;
-
-}
-
-.photo{
-    height: 2em;
-    width: 2em;
-    background-color: rgb(255, 255, 255);
-    border-radius: 50%;
-    margin-top: 1em;
-    margin-left: 1em;
-}
-
 .logout{
     background-color: transparent;
     border: none;
@@ -144,4 +131,26 @@ a.course:hover{
 
 form{
     margin: 2em;
+}
+
+a.edit{
+    font-size: .5em;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(86, 86, 255);
+}
+
+.course_container{
+    display: flex;
+}
+
+h1{
+    margin-bottom: 1em;
+}
+
+.admin-link{
+    font-family: Helvetica, sans-serif;
+}
+
+.admin-link:hover{
+    background-color: #cea023;
 }

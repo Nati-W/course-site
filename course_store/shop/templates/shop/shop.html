@@ -11,33 +11,17 @@
     </div>
     
     <div class="section courses" id='courses'>
-        <h1 class="section_name">Courses</h1>
-        
-        {% for course in courses %}
-            <style>
-                a.course{
-                    background-image: url("{{ course.thumbnail.url }}");
-                }
-            </style>
-        {% endfor %}     
+        <h1 class="section_name">Courses<a href="{% url "manager:edit-list" %}" class='edit'>Edit</a></h1>    
 
         {% for course in courses %}
-            <a href="" class="course">{{course.title}}</a>
+
+            <a href="/courses/{{course.id}}" class="course" 
+            style='background-image: url("{{course.thumbnail.url}}");
+            background-size: cover;
+            background-position: center; '>{{course.title}}</a>
+            
         {% endfor %}
         
-    </div>
-
-    <div class="section testimonies" id='testimonies'>
-        <h1 class="section_name">Testimonies</h1>
-        <div class="card">
-            <div class="photo"></div>
-        </div>
-        <div class="card">
-            <div class="photo"></div>
-        </div>
-        <div class="card">
-            <div class="photo"></div>
-        </div>
     </div>
 
     <div class="section about" id='about'>

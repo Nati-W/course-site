@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>Admin Users Only</h1>
-<a href="{% url "manage:upload-course" %}">Upload</a>
+<a href="{% url "manager:upload-course" %}" class='admin-link'>Upload</a>
+<a href="{% url "manager:edit-list" %}" class='admin-link'>Edit</a>
 
 {% endblock content %}

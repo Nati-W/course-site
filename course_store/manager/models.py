@@ -6,6 +6,7 @@ from django.core.validators import FileExtensionValidator
 class Course(models.Model):
     title = models.CharField(max_length=200)
     # validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mkv', 'mov', 'avi'])]
+    price = models.FloatField(default=0)
     video = models.FileField(upload_to='video/')
     thumbnail = models.ImageField(upload_to='thumbnail/')
     uploaded_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="course_container">
+        {% for course in courses %}
+            <a href="{% url "manager:edit" course_id=course.id %}" class='course' 
+            style='background-image: url("{{course.thumbnail.url}}");
+            background-size: cover;
+            background-position: center; '>{{course.title}}</a>
+        {% endfor %}
+    </div>
+{% endblock content %}

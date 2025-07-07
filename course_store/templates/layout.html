@@ -10,25 +10,37 @@
 <body>
     <div class="body">
         <nav>
+
             <div class="left">
                 <a href="{% url "shop:shop" %}"><div class='logo'></div></a>
                 <h1 class='name'><a href="{% url "shop:shop" %}">Name</a></h1>
             </div>
+
             <div class="right">
+
                 <a href="https://www.youtube.com" target="blank" ><img src="{% static "img/YouTube.svg" %}" id='youtube'></a>
                 <a href="https://www.instagram.com" target="blank"><img src="{% static "img/Instagram.svg" %}" id='instagram'></a>
+                
                 {% if user.is_authenticated %}
+
                     <form action="{% url "shop:logout" %}" method="post">
                         {% csrf_token %}
                         <button class='nav logout'>Logout</button>
                     </form>
+                
                 {% else %}
-                    <a href="{% url "shop:login" %}">Login</a>
+
+                    <a href="{% url "shop:login" %}" class='nav'>Login</a>
                     <a href="{% url "shop:register" %}" class='nav'>Register</a>
+
                 {% endif %}
+
+                <a href="{% url "manager:manage" %}" class="nav">Manage</a>
                 <a href="#courses" class="nav">Courses</a>
                 <a href="#about" class="nav">About</a>
+
             </div>
+
         </nav>
     
         <div class="content">

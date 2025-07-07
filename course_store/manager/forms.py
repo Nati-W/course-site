@@ -4,4 +4,4 @@ from . import models
 class UploadCourse(forms.ModelForm):
     class Meta:
         model = models.Course
-        fields = ['title', 'video', 'thumbnail']
+        fields = ['title', 'video', 'thumbnail', 'price']
