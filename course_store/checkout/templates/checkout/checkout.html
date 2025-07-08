@@ -5,12 +5,15 @@
 <div class='checkout-page'>
     <div class='course-img'></div>
     <div class='course-info'>
-        add logic to for unauthenitcated users
-        {{course.title}}
-        {{course.price}}
+        <p class='course-title'>{{course.title}}</p>
+        <br>
+        <p class="course-price">Price: {{course.price}}$</p>
+        <br>
         <form action="">
-            <input type="text" placeholder='card information' >
+            <label for="card-info">Card Information:</label>
+            <input type="text" class='form-control' id='card-info'>
         </form>
+        add logic to for unauthenitcated users
     </div>
 </div>
 {% endblock content %}

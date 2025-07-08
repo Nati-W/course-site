@@ -37,13 +37,12 @@ a.nav:hover{
 }
 
 nav{
-    padding: 15px;
     border-color: rgb(255, 255, 255);
     height: 100px;
     justify-content: space-between;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     position: sticky;
-    margin-bottom: 5em;
+    margin-bottom: 2em;
 }    
 
 .left, .right, .landing, .logo, .name, nav, .section{
@@ -80,23 +79,22 @@ nav{
     flex-direction: column;
 }
 
-.section_name, .photo{
+.section_name{
     position: absolute;
     top: 0;
     left: 0;
-}    
-
-.section_name{
     display: flex;
     justify-content: center;
-}
+}    
+
+
 
 a.course{
     padding: 5%;
     background-color: gray;
-    height: 4em;
-    width: 8em;
-    margin: 0px 4em;
+    height: auto;
+    aspect-ratio: 16/9;
+    margin: 0px .5rem;
     text-align: center;
 }    
 
@@ -129,10 +127,6 @@ a.course:hover{
     cursor: pointer;
 }
 
-form{
-    margin: 2em;
-}
-
 a.edit{
     font-size: .5em;
     font-family: 'Courier New', Courier, monospace;
@@ -141,6 +135,7 @@ a.edit{
 
 .course_container{
     display: flex;
+    justify-content: center;
 }
 
 h1{
@@ -153,4 +148,46 @@ h1{
 
 .admin-link:hover{
     background-color: #cea023;
+}
+
+.checkout-page{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.course-img{
+    height: 50%;
+    width: 50%;
+    background-color: gray;
+    margin: 0 2em 2em 2em;
+}
+
+.course-title{
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.form-control{
+    background-color: rgb(251, 251, 251);
+}
+
+@media only screen and (max-width: 769px){
+    .body{
+    padding: 0px 3em;
+    }
+}
+
+@media only screen and (max-width: 426px){
+    .landing{
+        display: none;
+    }
+    .section_name{
+        position: relative;
+        display: block;
+    }
+    .section{
+        flex-wrap: wrap;
+    } 
+    /* make only 1 course visible then make it scrollable with js */
 }

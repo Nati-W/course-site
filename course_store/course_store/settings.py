@@ -94,6 +94,12 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = [
+    'course-site-uae1.onrender.com',
+    'localhost',  # For local development
+    '127.0.0.1',  # For local development
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
