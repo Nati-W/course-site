@@ -100,6 +100,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1',  # For local development
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://course-site-uae1.onrender.com','http://*.127.0.0.1']
+
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
