@@ -1,0 +1,11 @@
+dj-database-url==3.0.1
+Django==5.1.4
+django-crispy-forms==2.4
+dotenv==0.9.9
+pillow==10.4.0
+pipenv==2024.4.1
+psycopg2-binary==2.9.10
+python-dotenv==1.1.1
+python-slugify==8.0.4
+sqlparse==0.5.3
+virtualenv==20.29.3
