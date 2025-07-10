@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from manager.models import Course
+from .forms import RegisterForm, LoginForm
 
 
 # Create your views here.
@@ -13,20 +14,20 @@ def shop(request):
 
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
             auth_login(request, form.save())
             return redirect('shop:shop')
     else:
-        form = UserCreationForm()
+        form = RegisterForm()
     return render(request, 'shop/register.html', {
         'form':form
     })
 
 def login(request):
     if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
+        form = LoginForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
@@ -35,7 +36,7 @@ def login(request):
                 auth_login(request, user)
                 return redirect('shop:shop')
     else:
-        form = AuthenticationForm()
+        form = LoginForm()
     return render(request, 'shop/login.html', {
         'form':form
     })
