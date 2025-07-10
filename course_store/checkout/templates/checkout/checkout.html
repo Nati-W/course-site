@@ -3,19 +3,25 @@
 {% block content %}
 <h1>Checkout page</h1>
 <div class='checkout-page'>
+
     <div class='course-img' style='background-image: url("{{course.thumbnail.url}}");
             background-size: cover;
             background-position: center; '></div>
+
     <div class='course-info'>
         <p class='course-title'>{{course.title}}</p>
-        <br>
         <p class="course-price">Price: {{course.price}}$</p>
-        <br>
-        <form action="">
-            <label for="card-info">Card Information:</label>
-            <input type="text" class='form-control' id='card-info'>
-        </form>
-        add logic to for unauthenitcated users
+        
+        {% if user.is_authenticated %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form}}
+                <button type="submit" class='submit-btn'>Buy Course</button>
+            </form>
+        {% else %}
+            <a href="{% url "checkout:unregistered_checkout"  title=course.title %}">Buy Course</a>
+        {% endif %}
     </div>
+
 </div>
 {% endblock content %}

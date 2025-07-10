@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="form-container">
+    <form action="unregistered_checkout" method="post" class='form'>
+        <h1>Sign Up</h1>
+        
+        {% csrf_token %}
+
+        <div class="input-container">
+            {{ register.username }}
+        </div>
+        <div class="input-container">
+            {{ register.password1 }}
+        </div>
+        <div class="input-container">
+            {{ register.password2 }}
+        </div>
+        <div class="input-container">
+            {{ checkout.card_info }}
+        </div>
+    
+        <button type="submit" class='submit-btn'>Create Account and Buy {{course.title}}</button>
+    </form>
+</div>
+
+{% endblock content %}
