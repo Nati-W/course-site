@@ -16,14 +16,16 @@
     <div class="section courses" id='courses'>
         <h1 class="section_name">Courses<a href="{% url "manager:edit-list" %}" class='edit'>Edit</a></h1>    
 
+        <button id="prev-slider">&lt;</button>
         {% for course in courses %}
 
             <a href="{% url "checkout:checkout" title=course.title %}" class="course" 
             style='background-image: url("{{course.thumbnail.url}}");
             background-size: cover;
-            background-position: center; '>{{course.title}}</a>
+            background-position: center; 'id='course.id'>{{course.title}}</a>
             
         {% endfor %}
+        <button id='next-slider'>&gt;</button>
         
     </div>
 

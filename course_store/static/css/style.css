@@ -37,8 +37,10 @@ a{
     padding: 15px 15px 0 15px;
 }
 
-a.nav:hover{
+a.nav:hover, .logout:hover{
     background-color: var(--hover-clr);
+    cursor: pointer;
+    padding: 15px 15px 15px 15px;
 }
 
 nav{
@@ -107,6 +109,17 @@ a.course:hover{
     background-color: rgb(79, 77, 77);
 }
 
+#prev-slider, #next-slider{
+    height: 1em;
+    width: 1em;
+    border: none;
+    border-radius: 50%;
+}
+
+#prev-slider:hover, #next-slider:hover{
+    cursor: pointer;
+}
+
 .section{
     height: 50vh;
     position: relative;
@@ -125,11 +138,6 @@ a.course:hover{
     font-family: var(--text-font);
     font-size: var(--text-size);
     padding: 15px 15px 0 15px;
-}
-
-.logout:hover{
-    background-color: var(--hover-clr);
-    cursor: pointer;
 }
 
 a.edit{
@@ -173,7 +181,7 @@ h1{
     font-weight: bolder;
 }
 
-.form-container{
+.form-container, #slider{
     display: flex;
     justify-content: center;
     align-items: center;
