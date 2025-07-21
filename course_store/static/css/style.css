@@ -25,23 +25,33 @@ html, body{
 
 .body{
     padding: 0px 100px;
-}
+}    
 
 .content{
     margin: 0px 20px;
-}
+}    
 
-a{
+a, .logout{
     text-decoration: none;
     color: var(--text-clr);
     padding: 15px 15px 0 15px;
-}
+
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    border: none;
+    background-color: transparent;
+
+    transition-property: padding;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
+}    
 
 a.nav:hover, .logout:hover{
     background-color: var(--hover-clr);
     cursor: pointer;
     padding: 15px 15px 15px 15px;
-}
+}    
 
 nav{
     border-color: rgb(255, 255, 255);
@@ -50,28 +60,32 @@ nav{
     /* padding: 0 20px; */
     position: sticky;
     margin-bottom: 2em;
-}    
+}        
 
 .left, .right, .landing, .logo, .name, nav, .section{
     display: flex;
     align-items: center;
-}    
+}        
 
 .name{
     margin: 0;
-}
+}    
 
 #youtube, #instagram{
     height: 1.75em;
     margin-right: 15px;
+    transition: all 0.2s ease-out;
+}   
 
+#youtube:hover, #instagram:hover{
+    transform: scale(1.25);
 }
 
 .landing{
     min-height: 400px;
     height: 50vh;
     justify-content: center;
-}        
+}            
 
 .logo{
     height: 50px;
@@ -79,12 +93,12 @@ nav{
     padding: 20px;
     background-color: rgb(255, 166, 0);
     border-radius: 50%;
-}           
+}               
 
 .text{
     display: flex;
     flex-direction: column;
-}
+}    
 
 .section_name{
     position: absolute;
@@ -92,7 +106,7 @@ nav{
     left: 0;
     display: flex;
     justify-content: center;
-}    
+}        
 
 
 
@@ -103,42 +117,35 @@ a.course{
     aspect-ratio: 16/9;
     margin: 0px .5rem;
     text-align: center;
-}    
+    transition: all 0.2s ease-out;
+}        
 
 a.course:hover{
-    background-color: rgb(79, 77, 77);
-}
+    transform: scale(1.25);
+}    
+
 
 #prev-slider, #next-slider{
     height: 1em;
     width: 1em;
     border: none;
     border-radius: 50%;
-}
+}    
 
 #prev-slider:hover, #next-slider:hover{
     cursor: pointer;
-}
+}    
 
 .section{
     height: 50vh;
     position: relative;
     justify-content: space-between;
     padding: 20px;
-}
+}    
 
 .about{
     height: 25vh;
-}
-
-.logout{
-    background-color: transparent;
-    border: none;
-    color: var(--text-clr);
-    font-family: var(--text-font);
-    font-size: var(--text-size);
-    padding: 15px 15px 0 15px;
-}
+}    
 
 a.edit{
     font-size: .5em;
