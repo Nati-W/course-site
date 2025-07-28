@@ -14,30 +14,36 @@
     </div>
     
     <div class="section courses" id='courses'>
-        <h1 class="section_name">Courses<a href="{% url "manager:edit-list" %}" class='edit'>Edit</a></h1>
+        <h1 class="section_name">Courses
+            {% if user.is_superuser %}
+            <a href="{% url "manager:edit-list" %}" class='edit'>Edit</a>
+            {% endif %}
+        </h1>
 
-        <div class="course-container">
-            <div class="course-wrapper">
+        <div class="section_content">
+
             <button id="prev-slider">&lt;</button>
-                {% for course in courses %}
+                    {% for course in courses %}
 
-                    <a href="{% url "checkout:checkout" title=course.title %}" class="course" 
-                    style='background-image: url("{{course.thumbnail.url}}");
-                    background-size: cover;
-                    background-position: center; 'id='course.id'>{{course.title}}</a>
-                    
-                {% endfor %}
-            </div>
+                        <a href="{% url "checkout:checkout" title=course.title %}" class="course" 
+                        style='background-image: url("{{course.thumbnail.url}}");
+                        background-size: cover;
+                        background-position: center; 'id='course.id'>{{course.title}}</a>
+                        
+                    {% endfor %}
+            <button id='next-slider'>&gt;</button>
         </div>
-        <button id='next-slider'>&gt;</button>
         
     </div>
 
     <div class="section about" id='about'>
         <h1 class='section_name'>About</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia perferendis, 
-            facere laudantium inventore eligendi consequuntur voluptatum itaque aliquid corrupti impedit, 
-            perspiciatis esse praesentium eos dicta nemo commodi recusandae asperiores.</p>
+
+        <div class="section_content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro mollitia perferendis, 
+                facere laudantium inventore eligendi consequuntur voluptatum itaque aliquid corrupti impedit, 
+                perspiciatis esse praesentium eos dicta nemo commodi recusandae asperiores.</p>
+        </div>
     </div>
 
 {% endblock content %}

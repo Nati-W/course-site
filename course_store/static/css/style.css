@@ -100,13 +100,11 @@ nav{
     flex-direction: column;
 }    
 
-.section_name{
-    position: absolute;
-    top: 0;
-    left: 0;
+/* .section_name{
+    margin-bottom: 1em;
     display: flex;
     justify-content: center;
-}        
+}         */
 
 
 
@@ -128,8 +126,13 @@ a.course:hover{
 #prev-slider, #next-slider{
     height: 1em;
     width: 1em;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     border-radius: 50%;
+
 }    
 
 #prev-slider:hover, #next-slider:hover{
@@ -137,11 +140,18 @@ a.course:hover{
 }    
 
 .section{
-    height: 50vh;
-    position: relative;
-    justify-content: space-between;
+    min-height: 50vh;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 20px;
 }    
+
+.section_content{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
 .about{
     height: 25vh;
@@ -151,11 +161,6 @@ a.edit{
     font-size: .5em;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(86, 86, 255);
-}
-
-.course_container{
-    display: flex;
-    justify-content: center;
 }
 
 h1{

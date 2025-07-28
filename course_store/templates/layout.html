@@ -35,8 +35,10 @@
                     <a href="{% url "shop:register" %}" class='nav'>Register</a>
 
                 {% endif %}
-
-                <a href="{% url "manager:manage" %}" class="nav">Manage</a>
+                
+                {% if user.is_superuser %}
+                    <a href="{% url "manager:manage" %}" class="nav">Manage</a>
+                {% endif %}
                 <a href="#courses" class="nav">Courses</a>
                 <a href="#about" class="nav">About</a>
 
